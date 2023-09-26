@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>User Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #loginForm {
+      margin: 50px auto;
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="loginForm">
+    <h1>User Login</h1>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter your username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password">
+      <button type="button" onclick="validateLogin()">Login</button>
+    </form>
+    <p id="loginMessage"></p>
+  </div>
+
+  <script>
+    function validateLogin() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var loginMessage = document.getElementById("loginMessage");
+
+      if (username === "naufal" && password === "123") {
+        loginMessage.style.color = "green";
+        loginMessage.textContent = "Login successful. Redirecting...";
+        // You can add redirection logic here
+      } else {
+        loginMessage.style.color = "red";
+        loginMessage.textContent = "Invalid username or password. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
